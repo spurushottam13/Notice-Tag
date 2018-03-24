@@ -1,6 +1,6 @@
 import React , {Component} from 'react';
 import * as firebase from 'firebase';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 export default class SignIN extends Component {
     
     constructor(props){
@@ -41,6 +41,7 @@ export default class SignIN extends Component {
               </label><br/>
               <input type="submit" value="Login" />
             </form>
+            <button><Link to='/dash'>Go to Das</Link></button>
             </div>
         );
     }

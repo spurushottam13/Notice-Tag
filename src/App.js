@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import SignIN from './components/singin.js';
 import SignUP from './components/signup.js';
 import Main from './components/main.js';
 import Dash from './components/dash';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 
 class App extends Component {

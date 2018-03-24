@@ -1,6 +1,6 @@
 import React , {Component} from 'react';
 import * as firebase from 'firebase';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
 export default class SingUP extends Component {
     
     constructor(props){
