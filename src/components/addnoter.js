@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import * as firebase from 'firebase';
+import './main.css'
 export default class AddNoter extends Component{ 
     constructor(props){
         super(props);
@@ -15,21 +16,27 @@ export default class AddNoter extends Component{
         console.log('uid',uid)
         const DbRef = firebase.database().ref().child("userPre/"+uid);
         DbRef.push().set(noter);
+        DbRef.on('child_added', snap =>{
+            window.location="/dash"
+        })
         event.preventDefault();
     }
    
     
     render(){
         return(
-            <div>
-            <p>Add Noter</p>
+            <div className="background">
+            <div className="header">
+           <img src={require('../components/assets/logo.png')}  className="logo"/>
+            </div>
+            <div className="sec1">
+            <p>Add NoterID to get thier Notice</p>
             <form onSubmit={this.addNoter}>
-              <label>
-                Name:
-                <input type="text" name="noter" />
-              </label><br/>
-              <input type="submit" value="AddNoter" />
+                <br/>
+                <input className="input" type="text" placeholder="Noter ID" name="noter" /><br/>
+                <input className="button" type="submit" value="AddNoter" />
             </form>
+            </div>
             </div>
         );
     }

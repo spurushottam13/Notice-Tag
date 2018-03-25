@@ -3,6 +3,7 @@ import * as firebase from 'firebase';
 import Loading from '../components/loading';
 import Adapter from '../components/adapter.js';
 import { Link } from "react-router-dom";
+import '../components/main.css';
 export default class Dash extends Component {
     constructor(props){
         super(props);
@@ -31,10 +32,11 @@ export default class Dash extends Component {
                 dbRef.on('value', datasnapshot => {
                     for(var key in datasnapshot.val()){
                         temps.push(datasnapshot.val()[key]);
+                        temps.reverse()
                         this.setState({
                             msgStack : temps
                         })
-                        console.log(this.state.msgStack);
+                        console.log(this.state.msgStack,temps);
                     }
                 })
             })
@@ -47,9 +49,11 @@ export default class Dash extends Component {
     render(){
         if (!this.state.msgStack.length) return <Loading />;
         return(
-            <div>
-            <p>All msg are here</p>
-            <button><Link to="/addNoter">Add Noter</Link></button>
+            <div className="background">
+            <div className="header">
+            <img src={require('../components/assets/logo.png')}  className="logo"/>
+            <Link  className="fab" to="/addNoter">+</Link>
+            </div>
             <Adapter msgStack={this.state.msgStack} />
             </div>
         );        

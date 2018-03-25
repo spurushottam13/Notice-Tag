@@ -1,0 +1,70 @@
+.background{
+    background: #efefef;
+    margin: -0px;
+}
+.line{
+    width: 15px;
+    background: #434445;
+    display: block;
+    height: 100vh;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    
+}
+.wrap{
+    position: fixed;
+    top:0px;
+    left: 0px;
+    height: 100vh;
+    width: 100vw;
+    padding-left: 40px;
+    box-sizing: border-box;
+}
+.mlogo{
+    width: 65%;
+    margin-top: 15%;
+}
+.mtext{
+    font-size: 2.2rem;
+}
+.msec1{
+   padding-top: 40px;
+    line-height: 10px;
+}
+.minput[type="text"] {
+     display: block;
+     background:  #efefef;
+     color: black;
+     margin: 0;
+     width: 75vw;
+     font-family: 'Raleway',sans-serif;
+     font-size: 1.2em;
+     box-shadow: none;
+     border-radius: none;    
+     padding: 10px;
+     border: none;
+     border-bottom: solid 1.5px #434445;
+     margin-bottom: 1em;
+}
+.minput[type="text"]:focus {
+    outline: none;
+    border-bottom-width: 2.42px;
+}
+.mbutton{
+    margin-top: -1em;
+    background: #efefef;
+    color:#434445;
+    border: solid 2px #efefef;
+    font-family: 'Raleway',sans-serif;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.mfooter{
+    color: #434445;
+    font-weight:700;
+    font-size: 1.1em;
+    position: absolute;
+    text-align: center;
+    bottom: 20vh;
+}

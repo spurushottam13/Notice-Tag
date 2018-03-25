@@ -36,13 +36,38 @@ export default class SingUP extends Component {
         DbRef.ref('userPre/'+UID).set({
             1:'noterone',
         })
+        DbRef.on('child_added', snap=>{
+            window.location='/dash';
+        })
     }
     
     render(){
         return(
-            <div>
-            <p>THis is Singup page</p>
-            <form onSubmit={this.signup}>
+            <div className="background">
+            <div className="line"></div>
+            <div className="wrap">
+                <img src={require('../components/assets/slogo.png')}  className="mlogo"/>
+                    <div className="msec1">
+                        <p className="mtext">Welcome</p>
+                        <p className="mtext">SignIN</p>
+                    </div>
+                    <form onSubmit={this.signup}>
+                        <input className="minput" placeholder="Username" type="text" name="name" />
+                        <input className="minput" placeholder="Password" type="text" name="pass" />
+                        <input className="minput" placeholder="Renter Password" type="text" name="repass" />
+                      <input className="mbutton"type="submit" value="SignUP" />
+                    </form>
+                      
+            </div>
+            </div>
+        );
+    }
+}
+
+
+
+/*
+ <form onSubmit={this.signup}>
               <label>
                 Name:
                 <input type="text" name="name" />
@@ -56,8 +81,4 @@ export default class SingUP extends Component {
                 <input type="text" name="repass" />
               </label><br/>
               <input type="submit" value="SignUP" />
-            </form>
-            </div>
-        );
-    }
-}
+            </form>*/

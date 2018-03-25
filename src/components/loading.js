@@ -1,10 +1,14 @@
 import React, {Component} from 'react';
 
+
 export default class Loading extends Component {
     render(){
         return(
-            <div>
-            <p>This is waiting ...</p>
+            <div className="background">
+            <div className="header">
+            <img src={require('../components/assets/logo.png')}  className="logo"/>
+            </div>
+            <p className="wait">Fetching Data . . </p>
             </div>
         );
     }
